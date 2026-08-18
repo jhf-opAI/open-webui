@@ -1,0 +1,38 @@
+# Keep secrets and local credentials out of Cloud Agent / IDE context.
+# Terminal commands can still reach these files; do not rely on this as the only control.
+
+# Env files (keep .env.example readable)
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+**/*.pem
+**/*.key
+
+# Common credential dumps
+**/credentials.json
+**/secrets.json
+**/service-account*.json
+**/.webui_secret_key
+.webui_secret_key
+
+# Local Open WebUI runtime data (may contain chats, uploads, SQLite)
+backend/data/
+backend/open_webui/data/
+data/
+*.db
+*.sqlite
+*.sqlite3
